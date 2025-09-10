@@ -1,19 +1,16 @@
-namespace LogExtractor
+namespace LogJsonExtractor
 {
     partial class Form1
     {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private Button btnSelectFile;
-        private Button btnProcess;
-        private TextBox txtFilePath;
-        private TextBox txtOutput;
-        private ProgressBar progressBar;
-        private Label lblStatus;
-        private Label lblFile;
-        private Label lblResults;
-        private Button btnSaveToExcel;
-        private Button btnSaveToJson;
 
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,127 +20,143 @@ namespace LogExtractor
             base.Dispose(disposing);
         }
 
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
-            this.btnSelectFiles = new Button();
-            this.btnProcess = new Button();
-            this.lstFiles = new ListBox();
-            this.txtOutput = new TextBox();
-            this.progressBar = new ProgressBar();
-            this.lblStatus = new Label();
-            this.lblFiles = new Label();
-            this.lblResults = new Label();
-            this.btnSaveToExcel = new Button();
-            this.btnSaveToJson = new Button();
-            this.btnClearFiles = new Button();
-            this.lblThreadsInfo = new Label();
+            this.btnSelectFiles = new System.Windows.Forms.Button();
+            this.btnProcess = new System.Windows.Forms.Button();
+            this.btnExportExcel = new System.Windows.Forms.Button();
+            this.btnExportJson = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.listBoxFiles = new System.Windows.Forms.ListBox();
+            this.lblResults = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            
-            // Form1
-            this.AutoScaleDimensions = new SizeF(8F, 20F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(900, 700);
-            this.Text = "Log JSON Extractor - Multi-File Processing";
-            this.StartPosition = FormStartPosition.CenterScreen;
-            
-            // lblFiles
-            this.lblFiles.AutoSize = true;
-            this.lblFiles.Location = new Point(20, 20);
-            this.lblFiles.Size = new Size(200, 20);
-            this.lblFiles.Text = "Выберите файлы логов (до 10):";
-            
-            // lstFiles
-            this.lstFiles.Location = new Point(20, 45);
-            this.lstFiles.Size = new Size(600, 120);
-            this.lstFiles.HorizontalScrollbar = true;
-            this.lstFiles.SelectionMode = SelectionMode.MultiExtended;
-            
+            // 
             // btnSelectFiles
-            this.btnSelectFiles.Location = new Point(640, 45);
-            this.btnSelectFiles.Size = new Size(120, 35);
-            this.btnSelectFiles.Text = "Добавить файлы";
+            // 
+            this.btnSelectFiles.Location = new System.Drawing.Point(20, 20);
+            this.btnSelectFiles.Name = "btnSelectFiles";
+            this.btnSelectFiles.Size = new System.Drawing.Size(120, 30);
+            this.btnSelectFiles.TabIndex = 0;
+            this.btnSelectFiles.Text = "Выбрать файлы";
             this.btnSelectFiles.UseVisualStyleBackColor = true;
-            this.btnSelectFiles.Click += new EventHandler(this.btnSelectFiles_Click);
-            
-            // btnClearFiles
-            this.btnClearFiles.Location = new Point(640, 90);
-            this.btnClearFiles.Size = new Size(120, 35);
-            this.btnClearFiles.Text = "Очистить список";
-            this.btnClearFiles.UseVisualStyleBackColor = true;
-            this.btnClearFiles.Click += new EventHandler(this.btnClearFiles_Click);
-            
+            this.btnSelectFiles.Click += new System.EventHandler(this.BtnSelectFiles_Click);
+            // 
             // btnProcess
-            this.btnProcess.Location = new Point(640, 135);
-            this.btnProcess.Size = new Size(120, 35);
+            // 
+            this.btnProcess.Enabled = false;
+            this.btnProcess.Location = new System.Drawing.Point(150, 20);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(120, 30);
+            this.btnProcess.TabIndex = 1;
             this.btnProcess.Text = "Обработать";
             this.btnProcess.UseVisualStyleBackColor = true;
-            this.btnProcess.Enabled = false;
-            this.btnProcess.Click += new EventHandler(this.btnProcess_Click);
-            
-            // lblThreadsInfo
-            this.lblThreadsInfo.AutoSize = true;
-            this.lblThreadsInfo.Location = new Point(780, 45);
-            this.lblThreadsInfo.Size = new Size(100, 60);
-            this.lblThreadsInfo.Text = "Режим работы:\n10 потоков\nпараллельно";
-            this.lblThreadsInfo.ForeColor = Color.Blue;
-            
-            // progressBar
-            this.progressBar.Location = new Point(20, 180);
-            this.progressBar.Size = new Size(860, 25);
-            this.progressBar.Style = ProgressBarStyle.Continuous;
-            
+            this.btnProcess.Click += new System.EventHandler(this.BtnProcess_Click);
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Enabled = false;
+            this.btnExportExcel.Location = new System.Drawing.Point(20, 370);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(150, 30);
+            this.btnExportExcel.TabIndex = 2;
+            this.btnExportExcel.Text = "Экспорт в Excel";
+            this.btnExportExcel.UseVisualStyleBackColor = true;
+            this.btnExportExcel.Click += new System.EventHandler(this.BtnExportExcel_Click);
+            // 
+            // btnExportJson
+            // 
+            this.btnExportJson.Enabled = false;
+            this.btnExportJson.Location = new System.Drawing.Point(180, 370);
+            this.btnExportJson.Name = "btnExportJson";
+            this.btnExportJson.Size = new System.Drawing.Size(150, 30);
+            this.btnExportJson.TabIndex = 3;
+            this.btnExportJson.Text = "Экспорт в JSON";
+            this.btnExportJson.UseVisualStyleBackColor = true;
+            this.btnExportJson.Click += new System.EventHandler(this.BtnExportJson_Click);
+            // 
             // lblStatus
+            // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new Point(20, 215);
-            this.lblStatus.Size = new Size(60, 20);
-            this.lblStatus.Text = "Готов";
-            
+            this.lblStatus.Location = new System.Drawing.Point(20, 240);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(95, 15);
+            this.lblStatus.TabIndex = 4;
+            this.lblStatus.Text = "Готов к работе";
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(20, 270);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(750, 20);
+            this.progressBar.TabIndex = 5;
+            // 
+            // listBoxFiles
+            // 
+            this.listBoxFiles.FormattingEnabled = true;
+            this.listBoxFiles.ItemHeight = 15;
+            this.listBoxFiles.Location = new System.Drawing.Point(20, 70);
+            this.listBoxFiles.Name = "listBoxFiles";
+            this.listBoxFiles.Size = new System.Drawing.Size(750, 154);
+            this.listBoxFiles.TabIndex = 6;
+            // 
             // lblResults
+            // 
             this.lblResults.AutoSize = true;
-            this.lblResults.Location = new Point(20, 245);
-            this.lblResults.Size = new Size(90, 20);
-            this.lblResults.Text = "Результаты:";
-            
-            // txtOutput
-            this.txtOutput.Location = new Point(20, 270);
-            this.txtOutput.Multiline = true;
-            this.txtOutput.ScrollBars = ScrollBars.Both;
-            this.txtOutput.Size = new Size(860, 350);
-            this.txtOutput.ReadOnly = true;
-            this.txtOutput.Font = new Font("Consolas", 9F);
-            
-            // btnSaveToExcel
-            this.btnSaveToExcel.Location = new Point(20, 635);
-            this.btnSaveToExcel.Size = new Size(150, 35);
-            this.btnSaveToExcel.Text = "Сохранить в Excel";
-            this.btnSaveToExcel.UseVisualStyleBackColor = true;
-            this.btnSaveToExcel.Enabled = false;
-            this.btnSaveToExcel.Click += new EventHandler(this.btnSaveToExcel_Click);
-            
-            // btnSaveToJson
-            this.btnSaveToJson.Location = new Point(190, 635);
-            this.btnSaveToJson.Size = new Size(150, 35);
-            this.btnSaveToJson.Text = "Сохранить в JSON";
-            this.btnSaveToJson.UseVisualStyleBackColor = true;
-            this.btnSaveToJson.Enabled = false;
-            this.btnSaveToJson.Click += new EventHandler(this.btnSaveToJson_Click);
-            
-            // Добавляем все контролы на форму
-            this.Controls.Add(this.lblFiles);
-            this.Controls.Add(this.lstFiles);
-            this.Controls.Add(this.btnSelectFiles);
-            this.Controls.Add(this.btnClearFiles);
-            this.Controls.Add(this.btnProcess);
-            this.Controls.Add(this.lblThreadsInfo);
+            this.lblResults.Location = new System.Drawing.Point(20, 310);
+            this.lblResults.Name = "lblResults";
+            this.lblResults.Size = new System.Drawing.Size(0, 15);
+            this.lblResults.TabIndex = 7;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(280, 20);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(120, 30);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Очистить";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.lblResults);
+            this.Controls.Add(this.listBoxFiles);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.lblResults);
-            this.Controls.Add(this.txtOutput);
-            this.Controls.Add(this.btnSaveToExcel);
-            this.Controls.Add(this.btnSaveToJson);
-            
+            this.Controls.Add(this.btnExportJson);
+            this.Controls.Add(this.btnExportExcel);
+            this.Controls.Add(this.btnProcess);
+            this.Controls.Add(this.btnSelectFiles);
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Log JSON Extractor";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
+
+        #endregion
+
+        private System.Windows.Forms.Button btnSelectFiles;
+        private System.Windows.Forms.Button btnProcess;
+        private System.Windows.Forms.Button btnExportExcel;
+        private System.Windows.Forms.Button btnExportJson;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.ListBox listBoxFiles;
+        private System.Windows.Forms.Label lblResults;
+        private System.Windows.Forms.Button btnClear;
     }
 }

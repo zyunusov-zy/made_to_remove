@@ -1,10 +1,13 @@
 using System;
 using System.Windows.Forms;
 
-namespace LogExtractor
+namespace LogJsonExtractor
 {
     internal static class Program
     {
+        /// <summary>
+        /// Главная точка входа для приложения.
+        /// </summary>
         [STAThread]
         static void Main()
         {
